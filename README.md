@@ -13,7 +13,12 @@ The motivation for this project is to demonstrate my understanding of Python bas
 - Python3
 
 ## Usage
+How the program works:
 
-Once you have cloned this repo to your system, you can run the following command: 
+Step One: Firstly, this program randomly selects a word from a given list.
+
+Step Two: The _ask_for_input()_ function is called. This function asks the user to input a single letter and then passes this guess into the __check_guess()__ function, which checks if the guessed letter is in the chosen word. 
+
+Step Three:
 
 
