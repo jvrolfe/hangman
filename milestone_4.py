@@ -16,7 +16,7 @@ class Hangman():
             for letter in self.word:
                 if letter == guess:
                   self.word_guessed[self.word[letter]] = guess  
-            self.num_letters -+ 1        
+            self.num_letters -= 1        
         else:
             print(f"Sorry, {guess} is not in the word. Try again.")
 
