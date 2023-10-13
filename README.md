@@ -22,3 +22,14 @@ Step Two: The _ask_for_input()_ function is called. This function asks the user 
 Step Three:
 
 
+## File Structure: 
+This program is separated into X AMOUNT of different modules. 
+
+**milestone_2.py**: Within this module two key variables are defined. 
+- __hangman_word_list__: Defines the list of words the computer can randomly choose from.
+- __chosen_word__: Using the choice function from the random module, the computer chooses a word from the __hangman_word_list__.
+
+If you want to see the list of words and the chosen word, run the milestone_2 code directly.
+
+**milestone_3.py**: Within this module, the user inputs a single letter guess. The milestone_2 module is imported, and the users guess compared with the chosen word. 
+- __
