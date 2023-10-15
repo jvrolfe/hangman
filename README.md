@@ -23,13 +23,27 @@ Step Three:
 
 
 ## File Structure: 
-This program is separated into X AMOUNT of different modules. 
+This repo contains four files. 
 
-**milestone_2.py**: Within this module two key variables are defined. 
+**milestone_2.py**: Within this module two key variables are tested. 
 - __hangman_word_list__: Defines the list of words the computer can randomly choose from.
-- __chosen_word__: Using the choice function from the random module, the computer chooses a word from the __hangman_word_list__.
+- __chosen_word__: Using the choice method from the random module, the computer chooses a word from the __hangman_word_list__.
 
 If you want to see the list of words and the chosen word, run the milestone_2 code directly.
 
-**milestone_3.py**: Within this module, the user inputs a single letter guess. The milestone_2 module is imported, and the users guess compared with the chosen word. 
-- __
+**milestone_3.py**: Within this module, I tested how to create a function for the user to input a single letter guess. The milestone_2 module is imported, and the users guess compared with the chosen word. 
+- __check_guess()__: This function checks if the user input (referred to as guess) is in the computer chosen word.
+- __ask_for_input()__: This function asks for a user input and stores it in the variable guess. Before asinin the user input to the variable guess, it checks if the input is a single, alphabetic character. 
+
+**milestone_4.py**: Within this module, the functions of milestone_2 and milestone_3 are combined into a Hangman class. 
+- __Hangman()__: This class contains three functions: 
+    - ____init__()__: This initialises all of the main variables of the class. It takes 2 paramters alongsde self:
+        - word_list (list): This is a list of words that the computer will randomly choose from. 
+        - num_lives (int): This is the number of lives left to the user. It is initialised to 5 by default. 
+    *Other variables that are initialised*:
+        - word (str): The random.choice method is used to randomly select a word from word_list. 
+        - num_letters (int): This returns the number of unique letters word.
+        - list_of_guesses (list): A list of guesses made by the user. Each guess is appended to the end of this list. It is initialised as an empty list.
+        - word_guessed (list): A list the length of word where each unguessed letter is represented with "_".
+    - __check_guess()__: This function works the same as the check_guess() function from milestone_3. It takes in the parameter guess. It has been updated to convert the guess and word to lower case. The guess is compared to each letter in the word iteratively within an if loop. If the guess is in the word, word_guessed is updated to replace "_" with the guess at the correct index. 
+    - __ask_for_input()__: This function works the same as the ask_for_input() function from milestone_3. It has been updated to also compare the guess to list_of_guesses, and f the letter has already been guessed it returns the message "You already tried that letter". If the letter has not been guessed, it is appended to list_of_guesses. 

@@ -2,7 +2,7 @@ import string
 import milestone_2
 
 
-def check_guess(guess):     # A function to check if the guessed letteris the computer chosen word
+def check_guess(guess):     # A function to check if the guessed letter is the computer chosen word
     guess = guess.lower()
     if guess in milestone_2.chosen_word.lower():
         print(f"Good guess! {guess} is in the word.")

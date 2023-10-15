@@ -15,15 +15,17 @@ class Hangman():
             print(f"Good guess! {guess} is in the word.")
             for letter in self.word:
                 if letter == guess:
-                  self.word_guessed[self.word[letter]] = guess  
+                  self.word_guessed[self.word.index(letter)] = guess  
             self.num_letters -= 1        
         else:
+            self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word. Try again.")
+            print(f"You have {self.num_lives} lives left.")
 
     def ask_for_input(self):
         while True:  
             guess = input("Enter a letter: ")                                               # User letter input
-            if len(guess) != 1 and guess.isalpha() == False:                                # Checks if guess does not = 1 and is not a letter
+            if len(guess) != 1 or not guess.isalpha():                                # Checks if guess does not = 1 and is not a letter
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:                                             # Checks if the guess is in the list of previous guesses
                 print(f"You already tried that letter!")
@@ -34,4 +36,4 @@ class Hangman():
 
 hangman_word_list = ["Banana","Apple","Pear","Strawberry","Dragonfruit"]                 
 x = Hangman(hangman_word_list)
-
+x.ask_for_input()
