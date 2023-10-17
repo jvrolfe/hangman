@@ -1,5 +1,6 @@
 import random
 import milestone_2
+
 class Hangman():
 
     '''
@@ -80,7 +81,22 @@ class Hangman():
                 print(f"Current word: {self.word_guessed}")
                 self.list_of_guesses.append(guess)
             if self.num_lives <= 0 or self.num_letters == 0:
-                break    
+                break   
+          
     
-x = Hangman(milestone_2.hangman_word_list)
-x.ask_for_input()
+
+def play_game(word_list):
+    num_lives = 5 
+    game = Hangman(word_list, num_lives)
+    while True:
+        if game.num_lives == 0:
+            print(f"You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print(f"Congratulations. You won the game!")
+            break
+
+      
+play_game(milestone_2.hangman_word_list)
