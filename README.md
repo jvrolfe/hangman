@@ -76,6 +76,6 @@ At the end of this module, the _`play_game()`_ function is called, and the `word
 
     $ git https://github.com/jvrolfe/hangman.git
 
-## Liscence
+## Licence
 
 `None`
