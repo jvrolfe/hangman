@@ -1,5 +1,4 @@
 import random
-import milestone_2
 
 class Hangman():
 
@@ -99,7 +98,7 @@ def play_game(word_list):
     When either of these variables = 0, the loop is broken and the game ends. 
 
         Args:
-            word_lsit (list): A list of words.
+            word_list (list): A list of words.
 
         Returns:
         If num_lives = 0:     
@@ -120,4 +119,5 @@ def play_game(word_list):
             break
 
 if __name__ == "__main__":  
-    play_game(milestone_2.hangman_word_list)                    # Testing that the above code works
+    word_list = ["Banana","Apple","Pear","Strawberry","Dragonfruit"]
+    play_game(word_list)                    # Testing that the above code works

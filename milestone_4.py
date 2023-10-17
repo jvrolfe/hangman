@@ -5,13 +5,19 @@ class Hangman():
     '''
     This class is used to play the game of Hangman. 
 
+    Parameters:
+    word_list (list):  A list of words.
+    num_lives (int): The number of remaining lives.
+    
     Attributes: 
-    word_list (list):  A lsit of words.
     word (str): Randomly chosen word.
-    num_letters (int): The number of unique letters in word.
-    num_lives (int): The number of remaining lives. 
+    num_letters (int): The number of unique letters in word.     
     list_of_guesses (list): A list of letters already guessed. 
     word_guessed (list): a list the length of word where unguessed letters are represented by "_". 
+    
+    Methods:
+    check_guess(guess): Checks if the guess is in the word.
+    ask_for_input(): Asks the user for a letter. 
     '''
     def __init__(self, word_list, num_lives=5):           
         '''
@@ -28,15 +34,16 @@ class Hangman():
     def check_guess(self, guess: str):                           # A function to check if the guessed letter is the computer chosen word
         '''
         This function is used to check if the user input (guess) is in word, keep track of the number of lives left, 
-        and update the state of the game with each guess.
+        and update the state of the game with each guess. With each correct guess, "_" in word_guessed is 
+        replaced with the letter. Each incorrect guess decreases the number of lives by 1. 
 
         Args:
-            guess: The user input from ask_for_input() as a string.
+            guess (str): The user input from ask_for_input() as a string.
 
         Returns:
         If the guess is in word:     
             str: "Good guess! {guess} is in the word." 
-        If the uess is not in word:
+        If the guess is not in word:
             str: "Sorry, {guess} is not in the word. Try again." 
             str: "You have {self.num_lives} lives left."
         '''
@@ -81,6 +88,7 @@ class Hangman():
                 self.list_of_guesses.append(guess)
             if self.num_lives <= 0 or self.num_letters == 0:
                 break    
-    
-x = Hangman(milestone_2.hangman_word_list)
-x.ask_for_input()
+
+if __name__ == "__main__":   
+    x = Hangman(milestone_2.hangman_word_list)
+    x.ask_for_input()

@@ -7,8 +7,8 @@ chosen_word = random.choice(hangman_word_list)  # Using the random module with t
 
 
 if __name__ == "__main__":
-    print(hangman_word_list)
-    print(chosen_word)
+    #print(hangman_word_list)
+    #print(chosen_word)
     user_guess = input("Enter a letter: ")  # User letter input
 
     if len(user_guess) == 1 and user_guess in string.ascii_letters:   # An if statement to check that the user input is a single letter

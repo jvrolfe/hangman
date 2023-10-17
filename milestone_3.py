@@ -18,4 +18,5 @@ def ask_for_input():
             print("Invalid letter. Please, enter a single alphabetical character.")
     check_guess(guess)
 
-ask_for_input()
+if __name__ == "__main__":
+    ask_for_input()
