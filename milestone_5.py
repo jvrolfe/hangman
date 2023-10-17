@@ -32,12 +32,12 @@ class Hangman():
         and update the state of the game with each guess.
 
         Args:
-            guess: The user input from ask_for_input() as a string.
+            guess (str): The user input from ask_for_input() as a string.
 
         Returns:
         If the guess is in word:     
             str: "Good guess! {guess} is in the word." 
-        If the uess is not in word:
+        If the guess is not in word:
             str: "Sorry, {guess} is not in the word. Try again." 
             str: "You have {self.num_lives} lives left."
         '''
@@ -86,6 +86,20 @@ class Hangman():
     
 
 def play_game(word_list):
+    '''
+    This function is used to play the game of Hangman. The word_list is passed as an argument, and an instance of the Hangman class is created within the function. 
+    Whilst the number of lives and unique letters left to guess in the word are > 0, this function whill repeatedly ask for the user input. 
+    When either of these variables = 0, the loop is broken and the game ends. 
+
+        Args:
+            word_lsit (list): A list of words.
+
+        Returns:
+        If num_lives = 0:     
+            str: "You lost!" 
+        If the user guesses the word correctly:
+            str: "Congratulations. You won the game!" 
+    '''
     num_lives = 5 
     game = Hangman(word_list, num_lives)
     while True:
