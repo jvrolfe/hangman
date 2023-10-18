@@ -31,6 +31,10 @@ class Hangman():
         self.list_of_guesses = []                      # A list of previous guesses. This is initialised to an empty list
         self.word_guessed = ["_"] * len(self.word)     # Variable to hold the word and guesses
         
+        print(f"The word has {len(self.word_guessed)} letters in it.")        
+        print(" ".join(map(str, self.word_guessed)))
+        pass
+
     def check_guess(self, guess):                           # A function to check if the guessed letter is the computer chosen word
         '''
         This function is used to check if the user input (guess) is in word, keep track of the number of lives left, 
@@ -84,7 +88,7 @@ class Hangman():
                 print(f"You already tried that letter!")
             else:                
                 self.check_guess(guess)                
-                print(f"Current word: {self.word_guessed}")
+                print(" ".join(map(str, self.word_guessed)))
                 self.list_of_guesses.append(guess)                                          # The list of previous guesses is updated
             if self.num_lives <= 0 or self.num_letters == 0:                                # Breaks the while loop if lives or num_letters = 0
                 break   
