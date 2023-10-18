@@ -31,8 +31,8 @@ class Hangman():
         self.list_of_guesses = []                      # A list of previous guesses. This is initialised to an empty list
         self.word_guessed = ["_"] * len(self.word)     # Variable to hold the word and guesses
         
-        print(f"The word has {len(self.word_guessed)} letters in it.")        
-        print(" ".join(map(str, self.word_guessed)))
+        print(f"The word has {len(self.word_guessed)} letters in it.")      # informs the user of the number of letters in the word  
+        print(" ".join(map(str, self.word_guessed)))                        # Prints the status of the word as a string
         pass
 
     def check_guess(self, guess):                           # A function to check if the guessed letter is the computer chosen word
@@ -88,7 +88,7 @@ class Hangman():
                 print(f"You already tried that letter!")
             else:                
                 self.check_guess(guess)                
-                print(" ".join(map(str, self.word_guessed)))
+                print(" ".join(map(str, self.word_guessed)))                                # Prints the status of the word as a string
                 self.list_of_guesses.append(guess)                                          # The list of previous guesses is updated
             if self.num_lives <= 0 or self.num_letters == 0:                                # Breaks the while loop if lives or num_letters = 0
                 break   
