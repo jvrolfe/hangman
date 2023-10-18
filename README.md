@@ -1,12 +1,12 @@
 # Hangman
 
-In this project, I have created my version of the [Hangman](<https://en.wikipedia.org/wiki/Hangman_(game)>) game in Python as part of the AiCore Data Analytics pathway content. Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+In this project, I have created my version of the [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) game in Python as part of the AiCore Data Analytics pathway content. Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
 
-This is an implementation of the Hangman game, where the computer choses a word randomly from a given list of words and the user tries to guess it. The user must guess the word one letter at a time. If a letter in the word is guessed correctly, it is filled in. Each incorrect guess loses a life, and when the number of lives reaches 0, the player has lost the game. 
+This is an implementation of the Hangman game, where the computer chooses a word randomly from a given list of words and the user tries to guess it. The user must guess the word one letter at a time. If a letter in the word is guessed correctly, it is filled in. Each incorrect guess loses a life, and when the number of lives reaches 0, the player has lost the game. 
 
 The motivation for this project is to demonstrate my understanding of Python based on the learning content and self-learning up to this point in the course. 
 
-In this project, I learned how to break a project down into steps and iteratively combine them into a finished program. I continuously scrutinised my code, ensuring that any repeated code blocks were abstracted. It also reinforced my learning surrounding object-orientated programming, and pushed me to understand how to fix bugs within my code. I also learned the value of documentation, as between days I found myself referring to my comments to understand what sections of my code were resposible for. 
+In this project, I learned how to break a project down into steps and iteratively combine them into a finished program. I continuously scrutinised my code, ensuring that any repeated code blocks were abstracted. It also reinforced my learning surrounding object-orientated programming, and pushed me to understand how to fix bugs within my code. I also learned the value of documentation, as between days I found myself referring to my comments to understand what sections of my code were responsible for. 
 
 ## Requirements
 
@@ -18,28 +18,39 @@ In this project, I learned how to break a project down into steps and iterativel
 The main module in this repo is milestone_5.py. This is where the game is played. 
 Once the repo has been cloned, run the following:
    
-    python3 milestone_5.py
+    $ python3 milestone_5.py
 
 If you are using another version of python, use the correct command in place of python3. 
 In the terminal, you will be prompted to enter a single, alphabetic letter guess. 
 
-![Alt text](image.png)
+
+    The word has 5 letters in it. 
+    _  _  _  _  _
+    Enter a letter:
 
 Once you have entered your guess and hit enter, you will be told if your guess is in the word or not, and shown the length of the word, the position of your correct guesses, and the number of remaining lives if the guess is incorrect. 
 
-![Correct guess](image-1.png)
+    Good guess! a is in the word. 
+    a  _  _  _  _
+    Enter a letter: 
 
 Or: 
 
-![Alt text](image-2.png)
+    Sorry, w is not in the word. Try again. 
+    You have 4 lives left. 
+    Enter a letter:
 
-The game will end when you run out of lives or you guess the word correctly.
+The game ends when either you run out of lives or you guess the word correctly. 
 
-![Alt text](image-3.png)
+    Good guess! e is in the word. 
+    a  p  p  l  e
+    Congratulations. You won the game!
 
 Or:
 
-![Alt text](image-4.png)
+    Sorry, q is not in the word.  
+    You have 0 lives left. 
+    You lost! The word was Apple.
 
 ## File Structure 
 This repo contains four files. 
@@ -74,8 +85,8 @@ At the end of this module, the _`play_game()`_ function is called, and the `word
 
 ## Installation
 
-    $ git https://github.com/jvrolfe/hangman.git
+    $ git clone https://github.com/jvrolfe/hangman.git
 
 ## Licence
 
-`None`
+Licence: `None`

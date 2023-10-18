@@ -32,7 +32,7 @@ class Hangman():
         self.word_guessed = ["_"] * len(self.word)     # Variable to hold the word and guesses
         
         print(f"The word has {len(self.word_guessed)} letters in it.")      # informs the user of the number of letters in the word  
-        print(" ".join(map(str, self.word_guessed)))                        # Prints the status of the word as a string
+        print("  ".join(map(str, self.word_guessed)))                        # Prints the status of the word as a string
         pass
 
     def check_guess(self, guess):                           # A function to check if the guessed letter is the computer chosen word
@@ -62,8 +62,12 @@ class Hangman():
             self.num_letters -= 1                                
         else:
             self.num_lives -= 1
-            print(f"Sorry, {guess} is not in the word. Try again.")
-            print(f"You have {self.num_lives} lives left.")
+            if self.num_lives > 0:
+                print(f"Sorry, {guess} is not in the word. Try again.")
+                print(f"You have {self.num_lives} lives left.")
+            else:
+                print(f"Sorry, {guess} is not in the word.")
+                print(f"You have {self.num_lives} lives left.")
 
     def ask_for_input(self):
         '''
@@ -88,7 +92,7 @@ class Hangman():
                 print(f"You already tried that letter!")
             else:                
                 self.check_guess(guess)                
-                print(" ".join(map(str, self.word_guessed)))                                # Prints the status of the word as a string
+                print("  ".join(map(str, self.word_guessed)))                                # Prints the status of the word as a string
                 self.list_of_guesses.append(guess)                                          # The list of previous guesses is updated
             if self.num_lives <= 0 or self.num_letters == 0:                                # Breaks the while loop if lives or num_letters = 0
                 break   
@@ -114,7 +118,7 @@ def play_game(word_list):
     game = Hangman(word_list, num_lives)
     while True:
         if game.num_lives == 0:                             # Condition for losing the game
-            print(f"You lost!")
+            print(f"You lost! The word was {game.word}.")
             break
         elif game.num_letters > 0:                          # Condition to continue the game
             game.ask_for_input()
